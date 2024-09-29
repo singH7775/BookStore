@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+.home-title {
+	margin-top: 15%;
+	text-align: center;
+}
+
+.button-container {
+	text-align: center;	
+}
+
+.home-buttons {
+	display: inline-block;
+	margin: 0 5px;
+}
+
+.add-button {
+	color: black;
+	margin-left: 18px;
+}
+
+.sign-up-in-form {
+	text-align: center;
+	margin-top: 20%;
+}
+
+.success-message {
+	text-align: center;
+	color: green;
+}
+
+.error-message {
+	text-align: center;
+	color: red;
+}
+
+.store-title {
+	text-align: center;
+}
+
+.log-out {
+	float: right;
+	margin-top: 1%;
+	margin-right: 10px;
+	color: black;
+}
+
+.space-headers th {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.space-headers td {
+	text-align: center;
+}
+
+.edit-button, .delete-button, .order-button {
+	padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.edit-button {
+	background-color: #4CAF50;
+    color: white;
+}
+
+.delete-button {
+	background-color: red;
+    color: white;
+}
+
+.order-button {
+	background-color: blue;
+    color: white;
+}
+
+.edit-button:hover {
+	background-color: #45a049;
+}
+
+.delete-button:hover {
+	background-color: #FFCCCB;
+}
+
+.order-button:hover {
+	background-color: #ADD8E6;
+}

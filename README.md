@@ -1,0 +1,2 @@
+- A basic CRUD operations book store I made a while ago, the main reason for this project was to practice/create composite keys. And in this case it is the OrderItemKey, which allowed me
+to create a OrderItem model that link members, products, and quantity. Also just practicing dockerizing.

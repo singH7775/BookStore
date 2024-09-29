@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="/style.css">
+<meta charset="UTF-8">
+<title>Home page</title>
+</head>
+<body>
+
+		<div class="sign-up-in-form">
+			<div th:if="${success}" class="success-message">
+				<p th:text="${success}"></p>
+			</div>
+			
+			<div th:if="${error}" class="error-message">
+				<p th:text="${error}"></p>
+			</div>
+			
+			<form th:action="@{/checkCredentials}" method="post">
+				<input type="text" name="username" placeholder="username" required>
+				<input type="password" name="password" placeholder="password" required>
+				<button type="submit">Sign In</button>
+			</form>
+		</div>
+
+</body>
+</html>

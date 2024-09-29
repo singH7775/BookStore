@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="/style.css">
+<meta charset="UTF-8">
+<title>Home page</title>
+</head>
+<body>
+
+		<a th:href="@{/store/storepage}" class="log-out">Back to store</a>
+
+		<h1>Order page</h1>
+		
+		<table style="border-spacing: 20px;">
+    		<thead>
+        		<tr>
+           	 		<th>Product</th>
+            		<th>Price</th>
+            		<th>Quantity</th>
+        		</tr>
+    		</thead>
+    	<tbody>
+        		<tr th:each="orderItem : ${orders}">
+            		<td th:text="${orderItem.product.productName}"></td>
+            		<td th:text="${orderItem.product.price}"></td>
+            		<td th:text="${orderItem.quantity}"></td>
+            		<td>
+            			<form th:action="@{/store/cancelOrder/{id}(id=${orderItem.product.id})}" method="post">
+					    	<button type="submit" class="delete-button" onclick="return confirm('Are you sure?')">Cancel Order</button>
+					  	</form>
+            		</td>
+        		</tr>
+    	</tbody>
+		</table>
+
+</body>
+</html>

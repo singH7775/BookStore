@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="/style.css">
+<meta charset="UTF-8">
+<title>Home page</title>
+</head>
+<body>
+		<form th:action="@{/logout}" method="post" class="log-out">
+			<button type="submit">Logout</button>
+		</form>
+		
+		<a th:href="@{/store/memberOrders}" class="log-out">My Orders</a>
+		
+		<h1 class="store-title">Welcome to The Library Store! Please buy some books!</h1>
+		
+		<a th:href="@{/store/addProduct}" class="add-button">Add product?</a>
+		
+		<table class="table space-headers">
+		  <thead>
+		    <tr>
+		      <th>Product Name</th>
+		      <th>Product Price</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  
+		 
+		      <tr th:each="product : ${products}">		   
+		         <td th:text="${product.productName}">...</td>
+		         <td th:text="${product.price}">...</td>
+		         
+		         <td>
+		         	<a th:href="@{/store/editproduct/{id}(id=${product.id})}" class="edit-button">Edit</a>
+		         </td>
+		         
+		         <td>
+					  <form th:action="@{/store/deleteProduct/{id}(id=${product.id})}" method="post">
+					    <button type="submit" class="delete-button" onclick="return confirm('Are you sure?')">Delete</button>
+					  </form>
+				</td>
+		         
+		         <td>
+					  <form th:action="@{/store/orderProduct/{id}(id=${product.id})}" method="post">
+					    <button type="submit" class="order-button" onclick="return confirm('Are you sure?')">Order</button>
+					  </form>
+				</td>
+		         
+		      </tr>
+  	 	
+		  
+		  </tbody>
+		</table>
+
+</body>
+</html>
